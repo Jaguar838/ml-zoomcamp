@@ -66,7 +66,7 @@ tf.random.set_seed(SEED)
 
 В якості оптимізатора використовуйте [`SGD`](https://keras.io/api/optimizers/sgd/) із такими параметрами:
 
-* `SGD(lr=0.002, momentum=0.8)`
+* `SGD(learning_rate=0.002, momentum=0.8)`
 
 Для уточнення щодо розміру ядра та max pooling перегляньте [Office Hours](https://www.youtube.com/watch?v=1WRgdBTUaAc).
 
