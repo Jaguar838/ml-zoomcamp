@@ -13,7 +13,7 @@ from urllib import request
 from PIL import Image
 
 
-MODEL_NAME = os.getenv('MODEL_NAME', 'bees-wasps-v2.tflite')
+MODEL_NAME = os.getenv('MODEL_NAME', 'model_2024_hairstyle_v2.tflite')
 
 
 def download_image(url):
@@ -37,16 +37,18 @@ def prepare_input(x):
 
 interpreter = tflite.Interpreter(model_path=MODEL_NAME)
 interpreter.allocate_tensors()
+file_size = os.path.getsize(MODEL_NAME) / (1024 * 1024)  # Розмір у МБ
+print(f"Розмір перетвореної моделі: {file_size:.2f} MB")
 
 input_index = interpreter.get_input_details()[0]['index']
 output_index = interpreter.get_output_details()[0]['index']
 
 
-# https://habrastorage.org/webt/rt/d9/dh/rtd9dhsmhwrdezeldzoqgijdg8a.jpeg
+# https://habrastorage.org/webt/yf/_d/ok/yf_dokzqy3vcritme8ggnzqlvwa.jpeg
 
 def predict(url):
     img = download_image(url)
-    img = prepare_image(img, target_size=(150, 150))
+    img = prepare_image(img, target_size=(200, 200))
 
     x = np.array(img, dtype='float32')
     X = np.array([x])
@@ -60,11 +62,7 @@ def predict(url):
     return float(preds[0, 0])
 
 
-def lambda_handler(event, context):
-    url = event['url']
-    pred = predict(url)
-    result = {
-        'prediction': pred
-    }
-
-    return result
+url = 'https://habrastorage.org/webt/yf/_d/ok/yf_dokzqy3vcritme8ggnzqlvwa.jpeg'
+pred = predict(url)
+result = {'prediction': pred}
+print(result)
