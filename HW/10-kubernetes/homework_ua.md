@@ -51,7 +51,7 @@ python q6_test.py
 
 * 0.287
 * 0.530
-* 0.757
+* **0.757**
 * 0.960
 
 Тепер можна зупинити контейнер у Docker.
@@ -101,7 +101,7 @@ kubectl cluster-info
 в Kubernetes (у нашому випадку через **kind**)?
 
 * Node
-* Pod
+* **Pod**
 * Deployment
 * Service
 
@@ -114,7 +114,7 @@ kubectl cluster-info
 Який `Type` має сервіс, що вже працює?
 
 * NodePort
-* ClusterIP
+* **ClusterIP**
 * ExternalName
 * LoadBalancer
 
@@ -129,7 +129,7 @@ kubectl cluster-info
 
 * `kind create cluster`
 * `kind build node-image`
-* `kind load docker-image`
+* **kind load docker-image**
 * `kubectl apply`
 
 ---
@@ -181,14 +181,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: <Service name>
+  name: subscription
 spec:
   type: LoadBalancer
   selector:
-    app: <???>
+    app: subscription <???>
   ports:
   - port: 80
-    targetPort: <PORT>
+    targetPort: 9696
 ```
 
 Що потрібно написати замість `<???>`?

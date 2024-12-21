@@ -31,7 +31,7 @@ docker build -t zoomcamp-model:3.11.5-hw10 .
 Run it to test that it's working locally:
 
 ```bash
-docker run -it --rm -p 9696:9696 zoomcamp-model:3.11.5-hw10
+docker run -it --rm -p 9696:9696 svizor/zoomcamp-model:3.11.5-hw10
 ```
 
 And in another terminal, execute `q6_test.py` file:
