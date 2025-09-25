@@ -34,7 +34,8 @@ How many records are in the dataset?
 
 - 4704
 - 8704
-- 9704
+- **9704**
+- 19704
 - 17704
 
 ### Q3. Fuel types
@@ -42,6 +43,8 @@ How many records are in the dataset?
 How many fuel types are presented in the dataset?
 
 - 1
+- **3**
+- 5
 - 2
 - 3
 - 4
@@ -54,14 +57,14 @@ How many columns in the dataset have missing values?
 - 1
 - 2
 - 3
-- 4
+- **4**
 
 ### Q5. Max fuel efficiency
 
 What's the maximum fuel efficiency of cars from Asia?
 
 - 13.75
-- 23.75
+- **23.75**
 - 33.75
 - 43.75
 
@@ -79,7 +82,7 @@ Has it changed?
 
 - Yes, it increased
 - Yes, it decreased
-- No
+- **No**
 
 
 ### Q7. Sum of weights
@@ -98,7 +101,7 @@ Has it changed?
 
 - 0.051
 - 0.51
-- 5.1
+- **5.1**
 - 51
 
 
